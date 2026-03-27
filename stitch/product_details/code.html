@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#1a1c1c",
+              "on-secondary-fixed": "#1c1b1b",
+              "surface-container": "#1f1f1f",
+              "surface": "#131313",
+              "on-tertiary-fixed-variant": "#454747",
+              "on-tertiary": "#2f3131",
+              "on-primary-fixed": "#351000",
+              "surface-tint": "#ffb693",
+              "secondary": "#c8c6c5",
+              "on-background": "#e2e2e2",
+              "inverse-surface": "#e2e2e2",
+              "surface-variant": "#353535",
+              "on-secondary-fixed-variant": "#474746",
+              "tertiary": "#c6c6c7",
+              "on-primary": "#561f00",
+              "background": "#131313",
+              "tertiary-fixed": "#e2e2e2",
+              "inverse-primary": "#a04100",
+              "on-surface": "#e2e2e2",
+              "tertiary-fixed-dim": "#c6c6c7",
+              "on-surface-variant": "#e2bfb0",
+              "on-secondary": "#313030",
+              "primary-container": "#ff6b00",
+              "inverse-on-surface": "#303030",
+              "surface-bright": "#393939",
+              "on-primary-fixed-variant": "#7a3000",
+              "on-secondary-container": "#b7b5b4",
+              "surface-container-highest": "#353535",
+              "outline-variant": "#5a4136",
+              "on-error": "#690005",
+              "secondary-fixed-dim": "#c8c6c5",
+              "primary-fixed": "#ffdbcc",
+              "secondary-fixed": "#e5e2e1",
+              "surface-container-high": "#2a2a2a",
+              "primary": "#ffb693",
+              "surface-dim": "#131313",
+              "error": "#ffb4ab",
+              "surface-container-low": "#1b1b1b",
+              "outline": "#a98a7d",
+              "on-tertiary-container": "#2f3132",
+              "secondary-container": "#474746",
+              "on-error-container": "#ffdad6",
+              "on-primary-container": "#572000",
+              "primary-fixed-dim": "#ffb693",
+              "error-container": "#93000a",
+              "surface-container-lowest": "#0e0e0e",
+              "tertiary-container": "#989999"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #ff6b00 0%, #ffb693 100%);
+        }
+        .notch-corner {
+            clip-path: polygon(0 0, 92% 0, 100% 8%, 100% 100%, 0 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-md flex justify-between items-center px-8 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#e2e2e2] cursor-pointer" data-icon="menu">menu</span>
+<h1 class="text-2xl font-black italic text-[#FF6B00] tracking-widest font-headline uppercase">HARDCOURT</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8 font-label text-[10px] font-bold tracking-widest uppercase">
+<a class="text-[#FF6B00]" href="#">Shop</a>
+<a class="text-[#e2e2e2] hover:text-[#FF6B00] transition-colors duration-300" href="#">Search</a>
+<a class="text-[#e2e2e2] hover:text-[#FF6B00] transition-colors duration-300" href="#">Orders</a>
+<a class="text-[#e2e2e2] hover:text-[#FF6B00] transition-colors duration-300" href="#">Likes</a>
+</nav>
+<span class="material-symbols-outlined text-[#e2e2e2]" data-icon="notifications">notifications</span>
+</div>
+</header>
+<main class="pt-16 pb-24">
+<!-- Hero Section: Kinetic Monolith -->
+<section class="relative w-full min-h-[618px] flex flex-col md:flex-row overflow-hidden bg-surface-container-low">
+<!-- Asymmetric Layout: Image Left -->
+<div class="w-full md:w-3/5 relative h-[442px] md:h-auto overflow-hidden">
+<img alt="Professional EuroLeague Basketball" class="w-full h-full object-cover grayscale contrast-125 brightness-75 transition-all duration-700 hover:grayscale-0 hover:scale-105" data-alt="Close-up of a premium orange basketball with deep textures, resting on a dark polished hardwood court with dramatic stadium lighting reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFnpOmEPb-yOMPGMi-HM3aS_ipva2xU381_AxtX2QR3MEc8DL_CIeatOEi25HFPbdF1Xkuxxy65fs3RFGNrmH_rnER-FzA5-h_WdBCdBCeI5Rr-pEqn8RQ47em96GVAAhnKdugf86KsfenbTVRHU5HqcePM4EfVICDDHG1YgRn07KP0nQU7FFdwNUQV8BXR8MYvyI7-sXShlw9_DqEjCOjtfWgBw2PAujOnz_nGxVn4xZuS-g7qjKE3MeFoFXh0lylLeCxbuh2doaM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+<!-- Float Label -->
+<div class="absolute top-8 left-8 bg-primary-container px-4 py-1 text-on-primary font-label font-black text-xs tracking-tighter uppercase italic">
+                    Official Game Ball
+                </div>
+</div>
+<!-- Product Identity Area -->
+<div class="w-full md:w-2/5 p-8 md:p-12 flex flex-col justify-end gap-6">
+<div>
+<span class="font-label text-primary tracking-[0.3em] text-[10px] uppercase font-bold mb-2 block">Elite Performance Series</span>
+<h2 class="text-6xl md:text-8xl font-black font-headline text-primary-container leading-[0.85] tracking-tighter mb-4 italic">
+                        TITAN<br/>GRIP PRO
+                    </h2>
+<div class="flex items-baseline gap-4 mt-8">
+<span class="text-4xl font-headline font-bold text-on-surface">$124.00</span>
+<span class="text-on-surface-variant line-through font-body text-sm">$150.00</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex-1 bg-primary-container text-on-primary font-headline font-black py-5 px-8 flex justify-between items-center active:scale-95 duration-200">
+<span>ADD TO CART</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="aspect-square bg-surface-container-high p-5 hover:bg-surface-container-highest transition-colors active:scale-90">
+<span class="material-symbols-outlined text-primary-container" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Product Specs & Bento Grid -->
+<section class="px-8 mt-20 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+<!-- Description Card -->
+<div class="md:col-span-2 bg-surface-container p-10 notch-corner">
+<h3 class="font-headline text-2xl font-bold mb-6 tracking-tight">THE AERODYNAMIC EVOLUTION</h3>
+<p class="text-on-surface font-light leading-relaxed text-lg mb-8 opacity-90">
+                        Engineered for the high-altitude intensity of the EuroLeague. The Titan Grip Pro features an advanced composite shell that wicks moisture instantly, ensuring maximum control during the most explosive plays. This is the kinetic center of every game.
+                    </p>
+<div class="grid grid-cols-2 gap-8 border-t border-outline-variant/20 pt-8">
+<div>
+<span class="block text-primary text-[10px] font-bold uppercase tracking-widest mb-2">Material</span>
+<p class="font-headline font-medium">Evo-Composite Leather</p>
+</div>
+<div>
+<span class="block text-primary text-[10px] font-bold uppercase tracking-widest mb-2">Internal Tech</span>
+<p class="font-headline font-medium">Balance-Core Pressure</p>
+</div>
+</div>
+</div>
+<!-- Stock & Status Card -->
+<div class="bg-surface-container-high p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-10">
+<span class="font-label text-[10px] font-bold uppercase tracking-widest">Status</span>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#4ade80] animate-pulse"></span>
+<span class="text-[#4ade80] text-xs font-bold font-label tracking-widest uppercase">In Stock</span>
+</div>
+</div>
+<p class="text-3xl font-headline font-bold mb-2">12 UNITS</p>
+<p class="text-on-surface-variant text-xs">Remaining at Madrid Central Hub</p>
+</div>
+<div class="mt-8">
+<span class="block text-on-surface-variant text-[10px] font-bold uppercase tracking-widest mb-4">Estimated Delivery</span>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" data-icon="local_shipping">local_shipping</span>
+<span class="text-sm font-medium">2-4 Business Days</span>
+</div>
+</div>
+</div>
+<!-- Specs List -->
+<div class="bg-surface-container-low p-10 md:row-start-2">
+<h4 class="font-headline text-xl font-bold mb-6">SPECIFICATIONS</h4>
+<ul class="space-y-4">
+<li class="flex justify-between py-3 border-b border-outline-variant/10">
+<span class="text-on-surface-variant text-sm font-body">Size</span>
+<span class="font-label font-bold text-sm">7 Official</span>
+</li>
+<li class="flex justify-between py-3 border-b border-outline-variant/10">
+<span class="text-on-surface-variant text-sm font-body">Weight</span>
+<span class="font-label font-bold text-sm">22 oz / 623g</span>
+</li>
+<li class="flex justify-between py-3 border-b border-outline-variant/10">
+<span class="text-on-surface-variant text-sm font-body">Circumference</span>
+<span class="font-label font-bold text-sm">29.5"</span>
+</li>
+<li class="flex justify-between py-3">
+<span class="text-on-surface-variant text-sm font-body">Certification</span>
+<span class="font-label font-bold text-sm">FIBA Approved</span>
+</li>
+</ul>
+</div>
+<!-- Performance Highlight (Image) -->
+<div class="md:col-span-2 md:row-start-2 relative overflow-hidden h-[300px]">
+<img alt="Performance detail" class="w-full h-full object-cover brightness-50 contrast-125" data-alt="High-contrast black and white photography of a professional basketball rim and net against a dark arena background with glowing atmospheric dust" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFz6vv3vwe4MRimeQfwrLDbSvOEOoyF2VejisoA1qwS3OrZLvbcfEVJ5QV-Cm215xTW3b6gvpN9P9HzYbQcTeGQKkUqAJSXCyTcQ25w0SIzaucZ6UbuI9ha-MMpYUzyWdrgJi8kFUtDMDV-xuxfMRfjKlYqmZC6Zh7hfhP5dpH5F9LF_aDbaDa_pFS6Mw-wHVV0FVnAQ-OifGVhCUYczoiTfIxhl_CJm1PHho46d2ovRMqOLhgTJK1wZ4Ge8RKh6rDVDvk1p_Mp7yf"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="text-center p-6 bg-[#131313]/60 backdrop-blur-md">
+<p class="font-headline font-black text-4xl italic tracking-tighter text-on-surface uppercase">Unrivaled Response</p>
+<p class="font-label text-[10px] tracking-widest mt-2">ENGINEERED FOR THE EUROLEAGUE</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Quote -->
+<section class="my-32 px-8 flex justify-center text-center">
+<div class="max-w-3xl">
+<span class="material-symbols-outlined text-primary-container text-6xl mb-6 opacity-40" data-icon="format_quote">format_quote</span>
+<p class="text-4xl md:text-5xl font-headline font-bold leading-tight tracking-tight italic">
+                    "THE MOMENT THE TEXTURE MEETS YOUR FINGERTIPS, THE NOISE OF THE ARENA DISAPPEARS."
+                </p>
+<p class="mt-8 font-label text-primary font-bold tracking-[0.4em] uppercase text-xs">Vasilije Micić / EuroLeague MVP</p>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl flex justify-around items-center h-20 px-4 shadow-[0_-4px_24px_rgba(0,0,0,0.5)]">
+<div class="flex flex-col items-center justify-center text-[#FF6B00] border-t-2 border-[#FF6B00] pt-2">
+<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Shop</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#e2e2e2]/60 pt-2">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Search</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#e2e2e2]/60 pt-2">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Orders</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#e2e2e2]/60 pt-2">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Likes</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#e2e2e2]/60 pt-2">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Cart</span>
+</div>
+</nav>
+</body></html>

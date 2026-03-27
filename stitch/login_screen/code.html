@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-container": "#1f1f1f",
+                        "surface": "#131313",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-tertiary": "#2f3131",
+                        "on-primary-fixed": "#351000",
+                        "surface-tint": "#ffb693",
+                        "secondary": "#c8c6c5",
+                        "on-background": "#e2e2e2",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-variant": "#353535",
+                        "on-secondary-fixed-variant": "#474746",
+                        "tertiary": "#c6c6c7",
+                        "on-primary": "#561f00",
+                        "background": "#131313",
+                        "tertiary-fixed": "#e2e2e2",
+                        "inverse-primary": "#a04100",
+                        "on-surface": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-surface-variant": "#e2bfb0",
+                        "on-secondary": "#313030",
+                        "primary-container": "#ff6b00",
+                        "inverse-on-surface": "#303030",
+                        "surface-bright": "#393939",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-container-highest": "#353535",
+                        "outline-variant": "#5a4136",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-fixed": "#ffdbcc",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-container-high": "#2a2a2a",
+                        "primary": "#ffb693",
+                        "surface-dim": "#131313",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#1b1b1b",
+                        "outline": "#a98a7d",
+                        "on-tertiary-container": "#2f3132",
+                        "secondary-container": "#474746",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-container": "#572000",
+                        "primary-fixed-dim": "#ffb693",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "tertiary-container": "#989999"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #ff6b00 0%, #ffb693 100%);
+        }
+        .notch-clip {
+            clip-path: polygon(0 0, 92% 0, 100% 15%, 100% 100%, 0 100%);
+        }
+        input:focus {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary min-h-screen overflow-hidden flex flex-col items-center justify-center">
+<!-- Background Layer with Atmosphere -->
+<div class="fixed inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-br from-surface via-surface-container-lowest to-surface-container-low"></div>
+<div class="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-primary-container/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-surface-container-highest/10 rounded-full blur-[80px]"></div>
+</div>
+<!-- Main Content Container -->
+<main class="relative z-10 w-full max-w-[440px] px-8">
+<!-- Brand Header Section -->
+<header class="mb-14 text-center">
+<!-- Brand Anchor Transcription from JSON: style_brand_logo -->
+<h1 class="text-5xl font-black italic text-primary-container tracking-widest font-headline uppercase">
+                HARDCOURT
+            </h1>
+<div class="flex items-center justify-center gap-4 mt-4">
+<span class="h-[1px] w-8 bg-outline-variant/30"></span>
+<p class="font-label text-xs font-bold tracking-[0.3em] text-on-surface-variant uppercase">
+                    Authentic Athletics
+                </p>
+<span class="h-[1px] w-8 bg-outline-variant/30"></span>
+</div>
+</header>
+<!-- Login Card: Applying Surface Hierarchy and Notch Effect -->
+<section class="bg-surface-container-low p-10 notch-clip border-l-4 border-primary-container shadow-2xl">
+<div class="mb-10">
+<h2 class="font-headline text-3xl font-extrabold tracking-tighter text-on-surface uppercase mb-2">
+                    Access Portal
+                </h2>
+<p class="text-on-surface-variant text-sm font-medium">Enter your credentials to enter the court.</p>
+</div>
+<!-- Role Selector: Admin vs User -->
+<div class="grid grid-cols-2 gap-px bg-surface-container-highest mb-8">
+<button class="bg-primary-container text-on-primary py-3 font-label text-xs font-black tracking-widest uppercase transition-all duration-300">
+                    User
+                </button>
+<button class="bg-surface-container-high text-on-surface-variant py-3 font-label text-xs font-black tracking-widest uppercase hover:bg-surface-container-highest transition-all duration-300">
+                    Admin
+                </button>
+</div>
+<form class="space-y-8">
+<!-- Username Field -->
+<div class="group">
+<label class="block font-label text-[10px] font-bold tracking-[0.2em] text-on-surface-variant uppercase mb-2">
+                        Account Identifier
+                    </label>
+<div class="relative bg-surface-container-highest">
+<input class="w-full bg-transparent border-none py-4 px-4 text-on-surface font-body font-bold placeholder:text-on-surface/20 focus:ring-0" placeholder="J.SMITH.07" type="text"/>
+<div class="absolute bottom-0 left-0 w-0 h-[2px] bg-primary-container transition-all duration-500 group-focus-within:w-full"></div>
+</div>
+</div>
+<!-- Password Field -->
+<div class="group">
+<label class="block font-label text-[10px] font-bold tracking-[0.2em] text-on-surface-variant uppercase mb-2">
+                        Security Phrase
+                    </label>
+<div class="relative bg-surface-container-highest">
+<input class="w-full bg-transparent border-none py-4 px-4 text-on-surface font-body font-bold placeholder:text-on-surface/20 focus:ring-0" placeholder="••••••••••••" type="password"/>
+<div class="absolute bottom-0 left-0 w-0 h-[2px] bg-primary-container transition-all duration-500 group-focus-within:w-full"></div>
+</div>
+<div class="flex justify-end mt-2">
+<a class="text-[10px] font-bold text-primary tracking-widest uppercase hover:text-primary-container transition-colors" href="#">Forgot Access?</a>
+</div>
+</div>
+<!-- Action Button: Primary Power Cell -->
+<button class="w-full kinetic-gradient text-on-primary py-5 font-headline font-black text-sm tracking-[0.2em] uppercase flex items-center justify-center gap-3 active:scale-[0.98] transition-transform duration-200" type="submit">
+                    Authenticate
+                    <span class="material-symbols-outlined text-lg" data-icon="chevron_right">chevron_right</span>
+</button>
+</form>
+</section>
+<!-- Footer Metadata -->
+<footer class="mt-10 flex flex-col items-center gap-6">
+<div class="flex items-center gap-8">
+<a class="text-[10px] font-bold text-on-surface-variant/60 tracking-widest uppercase hover:text-on-surface transition-colors" href="#">Privacy</a>
+<a class="text-[10px] font-bold text-on-surface-variant/60 tracking-widest uppercase hover:text-on-surface transition-colors" href="#">Terms</a>
+<a class="text-[10px] font-bold text-on-surface-variant/60 tracking-widest uppercase hover:text-on-surface transition-colors" href="#">Support</a>
+</div>
+<!-- Contextual Branding Image -->
+<div class="w-20 h-20 relative opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+<img alt="Euroleague Basketball Background" class="w-full h-full object-cover rounded-full border border-outline-variant/20" data-alt="dramatic close-up of a high-performance orange basketball against a pitch black background with sharp dramatic rim lighting and leather texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaNxVMV9SxaJ139APdfEdurLkoDBMrL6hqR7CstautDIWIOK7AEcVVnqXr7rlQY4jNDcWtIq-NuU3H-jWexrqGXIUnFlEFn7K42-QLmFPCiXD9SR41wp_XGhybW-Ph7zKhUPFPMFTGeVvHmbwMruPxVRpmEbgg89eZ5qcC2w1DHMgCmomUQ-_LoPhhX19H_Qfp9jvv0aH0X5ZHyLZM4jkv2zeQJeegzlIKW7wDRHXTclsFUDtE-xbPA-hwdHQ6rgEgadc5ZiExOtG1"/>
+<div class="absolute inset-0 bg-surface/40 rounded-full"></div>
+</div>
+</footer>
+</main>
+<!-- Suppressing Navigation Shell as per "Destination" Rule for Transactional/Login Screens -->
+<!-- Shell Visibility: Suppressed -->
+</body></html>

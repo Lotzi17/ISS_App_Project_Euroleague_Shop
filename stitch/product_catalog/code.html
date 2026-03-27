@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HARDCOURT | Product Catalog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-container": "#1f1f1f",
+                        "surface": "#131313",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-tertiary": "#2f3131",
+                        "on-primary-fixed": "#351000",
+                        "surface-tint": "#ffb693",
+                        "secondary": "#c8c6c5",
+                        "on-background": "#e2e2e2",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-variant": "#353535",
+                        "on-secondary-fixed-variant": "#474746",
+                        "tertiary": "#c6c6c7",
+                        "on-primary": "#561f00",
+                        "background": "#131313",
+                        "tertiary-fixed": "#e2e2e2",
+                        "inverse-primary": "#a04100",
+                        "on-surface": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-surface-variant": "#e2bfb0",
+                        "on-secondary": "#313030",
+                        "primary-container": "#ff6b00",
+                        "inverse-on-surface": "#303030",
+                        "surface-bright": "#393939",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-container-highest": "#353535",
+                        "outline-variant": "#5a4136",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-fixed": "#ffdbcc",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-container-high": "#2a2a2a",
+                        "primary": "#ffb693",
+                        "surface-dim": "#131313",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#1b1b1b",
+                        "outline": "#a98a7d",
+                        "on-tertiary-container": "#2f3132",
+                        "secondary-container": "#474746",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-container": "#572000",
+                        "primary-fixed-dim": "#ffb693",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "tertiary-container": "#989999"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .corner-notch {
+            clip-path: polygon(0 0, 92% 0, 100% 8%, 100% 100%, 0 100%);
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-md dark:bg-[#131313]/80 flex justify-between items-center px-8 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="text-[#FF6B00] active:scale-95 duration-200">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-2xl font-black italic text-[#FF6B00] tracking-widest font-['Space_Grotesk'] uppercase">HARDCOURT</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="text-[#FF6B00] font-['Space_Grotesk'] font-bold tracking-tighter uppercase transition-colors duration-300" href="#">Shop</a>
+<a class="text-[#e2e2e2] font-['Space_Grotesk'] font-bold tracking-tighter uppercase hover:text-[#FF6B00] transition-colors duration-300" href="#">Search</a>
+<a class="text-[#e2e2e2] font-['Space_Grotesk'] font-bold tracking-tighter uppercase hover:text-[#FF6B00] transition-colors duration-300" href="#">Orders</a>
+</nav>
+<button class="text-[#FF6B00] active:scale-95 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-8 max-w-7xl mx-auto">
+<!-- Search & Editorial Header -->
+<section class="mb-14">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+<div class="max-w-2xl">
+<h2 class="font-headline text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] mb-4">
+                        PRO <span class="text-primary-container">EQUIPMENT</span>
+</h2>
+<p class="font-body text-on-surface-variant text-lg uppercase tracking-widest font-medium">Authentic EuroLeague Performance Gear</p>
+</div>
+<div class="w-full md:w-96">
+<div class="relative group">
+<input class="w-full bg-surface-container-highest border-none focus:ring-0 text-on-surface font-headline font-bold tracking-widest px-6 py-4 pr-14 placeholder:text-on-surface-variant/40" placeholder="SEARCH CATALOG..." type="text"/>
+<div class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-container group-focus-within:w-full transition-all duration-500"></div>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-primary-container">search</span>
+</div>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap gap-4 items-center">
+<button class="flex items-center gap-2 bg-surface-container-high px-6 py-3 font-headline font-bold text-sm tracking-widest hover:bg-primary-container hover:text-on-primary transition-all uppercase">
+<span class="material-symbols-outlined text-sm">tune</span> Filters
+                </button>
+<div class="h-8 w-[1px] bg-outline-variant/30 hidden md:block mx-2"></div>
+<div class="flex gap-2 overflow-x-auto hide-scrollbar pb-2 md:pb-0">
+<button class="bg-primary-container text-on-primary px-6 py-3 font-headline font-bold text-sm tracking-widest uppercase">All Items</button>
+<button class="bg-surface-container-low text-on-surface px-6 py-3 font-headline font-bold text-sm tracking-widest uppercase hover:bg-surface-container-highest transition-all">Jerseys</button>
+<button class="bg-surface-container-low text-on-surface px-6 py-3 font-headline font-bold text-sm tracking-widest uppercase hover:bg-surface-container-highest transition-all">Footwear</button>
+<button class="bg-surface-container-low text-on-surface px-6 py-3 font-headline font-bold text-sm tracking-widest uppercase hover:bg-surface-container-highest transition-all">Equipment</button>
+<button class="bg-surface-container-low text-on-surface px-6 py-3 font-headline font-bold text-sm tracking-widest uppercase hover:bg-surface-container-highest transition-all">Team: Real Madrid</button>
+<button class="bg-surface-container-low text-on-surface px-6 py-3 font-headline font-bold text-sm tracking-widest uppercase hover:bg-surface-container-highest transition-all">Price: High-Low</button>
+</div>
+</div>
+</section>
+<!-- Product Grid (Asymmetric Bento-Inspired) -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Featured Card (Spans 8 columns) -->
+<div class="md:col-span-8 corner-notch bg-surface-container-low relative group overflow-hidden h-[500px]">
+<img alt="" class="absolute inset-0 w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal group-hover:scale-105 transition-all duration-700 opacity-60" data-alt="professional basketball player in a cinematic dark arena silhouette holding a textured orange basketball with dramatic spotlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByCi8kEVK7Y2GQIhwV-Qz9C44E5yxHgWmel-uGeUuJBUj6GXz3BAQHknz2R5wUhgpVgpZO4P4pQsrJonD9o7CaqNNHIdLhikweSjy79_cDYShrtJe1wrjCemapAQASDA1tpmgHM1EkdUoY09P0MbhrSP2o6o_otf18BLZ3gPBcE4Msts53Dwdlcj4O9TiOpeer6R-usb1KWHrRlvbHzdgs-bw_WSGzIfHltYX0q9dCn__mTn-ssf-_uQSL7Zww-aUNx8JjtkExCWGH"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10 w-full flex justify-between items-end">
+<div>
+<span class="inline-block bg-primary-container text-on-primary px-3 py-1 font-headline font-black text-xs tracking-widest uppercase mb-4">Elite Series</span>
+<h3 class="font-headline text-5xl font-black uppercase tracking-tighter max-w-md leading-none mb-2">Wilson Official Game Ball</h3>
+<p class="font-body text-on-surface-variant font-medium tracking-wide">The standard of European excellence.</p>
+</div>
+<div class="text-right">
+<div class="text-primary-container font-headline text-4xl font-black mb-4">€129</div>
+<button class="bg-on-surface text-background px-8 py-3 font-headline font-bold uppercase tracking-widest active:scale-95 transition-transform">Buy Now</button>
+</div>
+</div>
+</div>
+<!-- Standard Cards -->
+<div class="md:col-span-4 flex flex-col gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-high p-6 corner-notch relative group">
+<button class="absolute top-4 right-4 z-10 text-[#FF6B00]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div class="aspect-square bg-surface-container-highest mb-6 overflow-hidden">
+<img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="premium high-top basketball sneakers in black and vibrant orange colorway on a sleek minimalist dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoZzlAt25iMRfW9GuMXqkPVMTEMIT_ryPI-cqXvscp4aDLhrTBYNgQMQ6Sai_piyXDK8fRShDpFSR4zEBcYtNfWLc7KQtRGVa7hRzDVsmXQBw0U2owxjsqUAjccGWO5y3gdc5xWVvt-h5dIdHXaMloMALqTqYmW1HCB42pr6RIWxmNj_rUV9LZMxesLK8qCuobJItcg2tRed9IVwJAXVKuafos74lCxPPMdCzvPc1zAa0KKpBvAwdm30yGzybLtrP7--iyfmkzI-PT"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline font-bold uppercase tracking-tight text-xl">Court Master V2</h4>
+<p class="text-on-surface-variant text-sm font-medium">Performance Footwear</p>
+</div>
+<span class="font-headline font-black text-primary-container">€185</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-high p-6 corner-notch relative group">
+<button class="absolute top-4 right-4 z-10 text-on-surface/40 hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<div class="aspect-square bg-surface-container-highest mb-6 overflow-hidden">
+<img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="authentic basketball jersey hanging on a industrial metal locker in a moody dark locker room setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdYWDVTLwKgrvSeI_AsbgWtudU1NOY2aDNLyDcS5RAZpWc-bI7p5JS0zq5b7fG6xWEAA_7aDoK_izmgQVZGWPVFoCDNid9flNcU8U_-qQociUgGZKCuyIWmHTB1Ztu4zRWPszZF_nzgGpxwqU5xdRPTkFNVdm8ifBTV15djn7nkXzB9CVpdu4OCefU8ysiS4vhENOgHhjj6RmxmxF-RN928e048fTuLOAMnlI-Y0qRXBaGp7-GcR_H8wZBrFT3yOIL2shOpvzaVxqs"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline font-bold uppercase tracking-tight text-xl">Real Madrid Home</h4>
+<p class="text-on-surface-variant text-sm font-medium">Official Team Jersey</p>
+</div>
+<span class="font-headline font-black text-primary-container">€95</span>
+</div>
+</div>
+</div>
+<!-- Grid Row 2 -->
+<div class="md:col-span-4 bg-surface-container-high p-6 corner-notch relative group">
+<button class="absolute top-4 right-4 z-10 text-on-surface/40 hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<div class="aspect-square bg-surface-container-highest mb-6 overflow-hidden">
+<img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="close-up of a high-tech running shoe with intricate textures and neon accents in dramatic low light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrZJXTn4gqTosIjGFUY5rodW2FW6WYfelXEJpBcXrtoV85vwip0oWBlxp65tT9u-_-uHrJey_VyfhZZzAgBlZAUqbhT_je0bvFomVH66fM5860_CuO36ADYtTEuLEsTUf0uOve3uB8s022HIxjXesJh14p_j-r_PVIGZtxgR-bvGj0KFG6TZy5Yp7JuOtYW3BJnUJVJnFY921l2s9hvu4m7FdgGBtrZIIXfcwgQ8TqEIOcPsqZU9A0j1Bdywa6yQQHIqvw550gAbt5"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline font-bold uppercase tracking-tight text-xl">Flight Tech Low</h4>
+<p class="text-on-surface-variant text-sm font-medium">Speed Series</p>
+</div>
+<span class="font-headline font-black text-primary-container">€160</span>
+</div>
+</div>
+<div class="md:col-span-4 bg-surface-container-high p-6 corner-notch relative group">
+<button class="absolute top-4 right-4 z-10 text-[#FF6B00]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div class="aspect-square bg-surface-container-highest mb-6 overflow-hidden">
+<img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="modern athletic apparel shorts in black mesh fabric with orange contrast piping details on a dark surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBro3tawMVJHFRGydGgcnNvb5-uPJRAMlpcuJhr6vjANGJHvKacAW82J2UaGTyhVydmrK8ZtcCSCpsexRvO0I20dQiU5Vm6eAzZSt9h_5CKNXkwdTSUd35fE6RXNp3LpUx8xD_2bChWhpwKR3sMFW4Yjygt5wryrFTl1FS4fsZNPGFVCL0HCmasCpGxKmyUzoME923GsyuW3367Vy2L18oVCeLNe6yNgExFDGSBDyxqgxRxj-pBHy0zrhNQvx6fY7hXm-4ksO11Bpv5"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline font-bold uppercase tracking-tight text-xl">Pro-Mesh Shorts</h4>
+<p class="text-on-surface-variant text-sm font-medium">Training Gear</p>
+</div>
+<span class="font-headline font-black text-primary-container">€45</span>
+</div>
+</div>
+<div class="md:col-span-4 bg-surface-container-high p-6 corner-notch relative group">
+<button class="absolute top-4 right-4 z-10 text-on-surface/40 hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<div class="aspect-square bg-surface-container-highest mb-6 overflow-hidden">
+<img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="professional quality basketball hoop rim with a black chain net against a dark moody urban background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2YW_ETynUpcx7J4rMaASLVb4FXueXz-UDdYFfzF7cpd1n50CrmI-BGdk4c9iRNyFM2xN3Md-nAXY0voyoJGNvNswxMWjukjeuEujukbNgQvEXn-S9p_fRjLqsxZDFpKdpf8DG-jWfaY3k-fnXlfGN6OE9wo-a2u_QjoeF6XxjoiJje654fCB4_tRr0mITq2W4r4m0wT-aFZTFPT34yMzb60dqDK_aebW7BeUIEp64ECuCKQlvFPyMaqKBuYcxg6qQUNiMxRBIFMnk"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline font-bold uppercase tracking-tight text-xl">Blacktop Chain Net</h4>
+<p class="text-on-surface-variant text-sm font-medium">Hardware</p>
+</div>
+<span class="font-headline font-black text-primary-container">€30</span>
+</div>
+</div>
+</section>
+<!-- Load More Section -->
+<div class="mt-20 flex flex-col items-center">
+<div class="w-full h-[1px] bg-outline-variant/20 mb-12"></div>
+<button class="group flex flex-col items-center gap-4">
+<span class="font-headline font-black tracking-[0.3em] uppercase text-on-surface-variant group-hover:text-primary-container transition-colors">Reveal More</span>
+<span class="material-symbols-outlined text-4xl text-primary-container animate-bounce">expand_more</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe bg-[#131313]/80 backdrop-blur-xl dark:bg-[#131313]/80 shadow-[0_-4px_24px_rgba(0,0,0,0.5)] flex justify-around items-center w-full h-20 px-4 md:hidden">
+<button class="flex flex-col items-center justify-center text-[#FF6B00] border-t-2 border-[#FF6B00] pt-2 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Shop</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#e2e2e2]/60 pt-2 hover:text-[#FF6B00] active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Search</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#e2e2e2]/60 pt-2 hover:text-[#FF6B00] active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Orders</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#e2e2e2]/60 pt-2 hover:text-[#FF6B00] active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Likes</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#e2e2e2]/60 pt-2 hover:text-[#FF6B00] active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Cart</span>
+</button>
+</nav>
+</body></html>
