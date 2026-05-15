@@ -1,0 +1,53 @@
+@startuml UC6_ManageFavorites_Sequence
+skinparam backgroundColor #131313
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 4
+skinparam sequenceParticipantBorderColor #FF6B00
+skinparam sequenceParticipantBackgroundColor #1f1f1f
+skinparam sequenceParticipantFontColor #e2e2e2
+skinparam sequenceParticipantFontStyle Bold
+skinparam sequenceActorBorderColor #FF6B00
+skinparam sequenceActorBackgroundColor #1f1f1f
+skinparam sequenceActorFontColor #e2e2e2
+skinparam sequenceArrowColor #FF6B00
+skinparam sequenceLifeLineBorderColor #5a4136
+skinparam noteBorderColor #FF6B00
+skinparam noteBackgroundColor #2a2a2a
+skinparam noteFontColor #e2bfb0
+skinparam titleFontColor #FF6B00
+skinparam titleFontSize 16
+skinparam titleFontStyle Bold
+
+title UC6 – Manage Favorites
+
+actor User as user
+participant "React\nFrontend" as react
+participant "FavoriteController" as ctrl
+participant "FavoriteService" as svc
+participant "FavoriteRepository" as repo
+database "Database" as db
+
+user -> react : apasă ♡ pe produs
+react -> ctrl : POST /api/favorites/toggle/{productId}\nAuthorization: Bearer {token}
+ctrl -> svc : toggleFavorite(userId, productId)
+svc -> repo : findByUserIdAndProductId(userId, productId)
+repo -> db : SELECT * FROM favorites\nWHERE user_id=? AND product_id=?
+db --> repo : Optional<Favorite>
+repo --> svc : Optional<Favorite>
+
+alt Produsul NU este la favorite
+  svc -> repo : save(new Favorite(user, product))
+  repo -> db : INSERT INTO favorites
+  db --> repo : Favorite saved
+  svc --> ctrl : status = "added"
+else Produsul ESTE deja la favorite
+  svc -> repo : delete(favorite)
+  repo -> db : DELETE FROM favorites WHERE id=?
+  db --> repo : OK
+  svc --> ctrl : status = "removed"
+end
+
+ctrl --> react : 200 OK {status}
+react --> user : actualizează iconița ♡ în UI
+
+@enduml

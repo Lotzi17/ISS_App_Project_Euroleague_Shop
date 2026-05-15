@@ -1,0 +1,48 @@
+@startuml UC5_ViewProductDetails_Communication
+skinparam backgroundColor #131313
+skinparam componentBorderColor #FF6B00
+skinparam componentBackgroundColor #1f1f1f
+skinparam componentFontColor #e2e2e2
+skinparam componentFontStyle Bold
+skinparam actorBorderColor #FF6B00
+skinparam actorBackgroundColor #1f1f1f
+skinparam actorFontColor #e2e2e2
+skinparam arrowColor #FF6B00
+skinparam arrowThickness 2
+skinparam noteBorderColor #FF6B00
+skinparam noteBackgroundColor #2a2a2a
+skinparam noteFontColor #e2bfb0
+skinparam titleFontColor #FF6B00
+skinparam titleFontSize 16
+skinparam titleFontStyle Bold
+skinparam linetype ortho
+
+title UC5 – View Product Details
+
+actor "User" as user
+component "React Frontend" as react
+component "ProductController" as ctrl
+component "ProductService" as svc
+component "ProductRepository" as repo
+database "Database" as db
+
+user -- react
+react -- ctrl
+ctrl -- svc
+svc -- repo
+repo -- db
+
+note as N1
+  1: selectează produs
+  2: GET /api/products/{id}
+  3: getProductById(id)
+  4: findById(id)
+  5: SELECT WHERE id=?
+  6: Product entity
+  7: Optional<Product>
+  8: ProductDTO
+  9: 200 OK {product}
+  10: afișează detalii
+end note
+
+@enduml

@@ -1,0 +1,56 @@
+@startuml UC9_UpdateStock_Sequence
+skinparam backgroundColor #131313
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 4
+skinparam sequenceParticipantBorderColor #FF6B00
+skinparam sequenceParticipantBackgroundColor #1f1f1f
+skinparam sequenceParticipantFontColor #e2e2e2
+skinparam sequenceParticipantFontStyle Bold
+skinparam sequenceActorBorderColor #FF6B00
+skinparam sequenceActorBackgroundColor #1f1f1f
+skinparam sequenceActorFontColor #e2e2e2
+skinparam sequenceArrowColor #FF6B00
+skinparam sequenceLifeLineBorderColor #5a4136
+skinparam noteBorderColor #FF6B00
+skinparam noteBackgroundColor #2a2a2a
+skinparam noteFontColor #e2bfb0
+skinparam titleFontColor #FF6B00
+skinparam titleFontSize 16
+skinparam titleFontStyle Bold
+
+title UC9 – Update Stock (Admin)
+
+actor Admin as admin
+participant "React\nFrontend" as react
+participant "AdminController" as ctrl
+participant "ProductService" as svc
+participant "ProductRepository" as repo
+database "Database" as db
+
+admin -> react : introduce noua valoare de stoc
+react -> ctrl : PUT /api/admin/products/{id}/stock\n{stock: newValue}
+ctrl -> ctrl : @PreAuthorize("hasRole('ADMIN')")
+ctrl -> svc : updateStock(id, newStock)
+svc -> repo : findById(id)
+repo -> db : SELECT * FROM products WHERE id=?
+db --> repo : Product
+repo --> svc : Product
+
+alt Produs inexistent
+  svc --> ctrl : throw ResourceNotFoundException
+  ctrl --> react : 404 Not Found
+else Valoare negativă
+  svc --> ctrl : throw IllegalArgumentException
+  ctrl --> react : 400 Bad Request
+else Valoare validă
+  svc -> svc : product.setStock(newStock)
+  svc -> repo : save(product)
+  repo -> db : UPDATE products SET stock=? WHERE id=?
+  db --> repo : Product updated
+  repo --> svc : Product
+  svc --> ctrl : ProductDTO
+  ctrl --> react : 200 OK {product updated}
+  react --> admin : confirmă — stoc actualizat
+end
+
+@enduml

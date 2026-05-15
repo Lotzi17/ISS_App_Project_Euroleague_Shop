@@ -1,0 +1,52 @@
+@startuml UC6_ManageFavorites_Communication
+skinparam backgroundColor #131313
+skinparam componentBorderColor #FF6B00
+skinparam componentBackgroundColor #1f1f1f
+skinparam componentFontColor #e2e2e2
+skinparam componentFontStyle Bold
+skinparam actorBorderColor #FF6B00
+skinparam actorBackgroundColor #1f1f1f
+skinparam actorFontColor #e2e2e2
+skinparam arrowColor #FF6B00
+skinparam arrowThickness 2
+skinparam noteBorderColor #FF6B00
+skinparam noteBackgroundColor #2a2a2a
+skinparam noteFontColor #e2bfb0
+skinparam titleFontColor #FF6B00
+skinparam titleFontSize 16
+skinparam titleFontStyle Bold
+skinparam linetype ortho
+
+title UC6 – Manage Favorites
+
+actor "User" as user
+component "React Frontend" as react
+component "FavoriteController" as ctrl
+component "FavoriteService" as svc
+component "FavoriteRepository" as repo
+database "Database" as db
+
+user -- react
+react -- ctrl
+ctrl -- svc
+svc -- repo
+repo -- db
+
+note as N1
+  1: apasă ♡
+  2: POST /api/favorites/toggle/{id}
+  3: toggleFavorite(userId, productId)
+  4: findByUserIdAndProductId()
+  5: SELECT FROM favorites WHERE ...
+  6: Optional<Favorite>
+  7: Optional<Favorite>
+  8: delete() sau save()
+  9: DELETE/INSERT favorites
+  10: OK
+  11: OK
+  12: status {added/removed}
+  13: 200 OK {status}
+  14: actualizează ♡
+end note
+
+@enduml

@@ -1,0 +1,59 @@
+@startuml UC7_AddToCart_Sequence
+skinparam backgroundColor #131313
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 4
+skinparam sequenceParticipantBorderColor #FF6B00
+skinparam sequenceParticipantBackgroundColor #1f1f1f
+skinparam sequenceParticipantFontColor #e2e2e2
+skinparam sequenceParticipantFontStyle Bold
+skinparam sequenceActorBorderColor #FF6B00
+skinparam sequenceActorBackgroundColor #1f1f1f
+skinparam sequenceActorFontColor #e2e2e2
+skinparam sequenceArrowColor #FF6B00
+skinparam sequenceLifeLineBorderColor #5a4136
+skinparam noteBorderColor #FF6B00
+skinparam noteBackgroundColor #2a2a2a
+skinparam noteFontColor #e2bfb0
+skinparam titleFontColor #FF6B00
+skinparam titleFontSize 16
+skinparam titleFontStyle Bold
+
+title UC7 – Add Product to Cart
+
+actor User as user
+participant "React\nFrontend" as react
+participant "CartController" as ctrl
+participant "CartService" as svc
+participant "ProductService" as psvc
+participant "CartRepository" as repo
+database "Database" as db
+
+user -> react : apasă "+ Coș" pe produs
+react -> ctrl : POST /api/cart/add\n{productId, quantity}
+ctrl -> svc : addToCart(userId, productId, quantity)
+svc -> psvc : getProductById(productId)
+psvc --> svc : Product
+svc -> svc : checkStock(product, quantity)
+
+alt Stoc insuficient
+  svc --> ctrl : throw IllegalStateException
+  ctrl --> react : 409 Conflict
+  react --> user : "Stoc insuficient"
+else Stoc OK
+  svc -> repo : findByUserIdAndProductId(userId, productId)
+  repo -> db : SELECT * FROM cart_items WHERE ...
+  db --> repo : Optional<CartItem>
+  alt Item există deja în coș
+    svc -> repo : save(cartItem cu qty mărit)
+  else Item nou
+    svc -> repo : save(new CartItem)
+  end
+  repo -> db : INSERT / UPDATE cart_items
+  db --> repo : CartItem saved
+  repo --> svc : CartItem
+  svc --> ctrl : CartItemDTO
+  ctrl --> react : 200 OK {cartItem}
+  react --> user : actualizează coșul în UI
+end
+
+@enduml

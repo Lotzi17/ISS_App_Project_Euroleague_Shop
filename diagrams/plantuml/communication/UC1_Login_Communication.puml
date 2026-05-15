@@ -1,0 +1,48 @@
+@startuml UC1_Login_Communication
+skinparam backgroundColor #131313
+skinparam componentBorderColor #FF6B00
+skinparam componentBackgroundColor #1f1f1f
+skinparam componentFontColor #e2e2e2
+skinparam componentFontStyle Bold
+skinparam actorBorderColor #FF6B00
+skinparam actorBackgroundColor #1f1f1f
+skinparam actorFontColor #e2e2e2
+skinparam arrowColor #FF6B00
+skinparam arrowThickness 2
+skinparam noteBorderColor #FF6B00
+skinparam noteBackgroundColor #2a2a2a
+skinparam noteFontColor #e2bfb0
+skinparam titleFontColor #FF6B00
+skinparam titleFontSize 16
+skinparam titleFontStyle Bold
+skinparam linetype ortho
+
+title UC1 – Login
+
+actor "User" as user
+component "React Frontend" as react
+component "AuthController" as ctrl
+component "UserService" as svc
+component "UserRepository" as repo
+database "Database" as db
+
+user -- react
+react -- ctrl
+ctrl -- svc
+svc -- repo
+repo -- db
+
+note as N1
+  1: introduce credențiale
+  2: POST /api/auth/login
+  3: authenticate(username, password)
+  4: findByUsername(username)
+  5: SELECT users WHERE username=?
+  6: User entity
+  7: Optional<User>
+  8: AuthResponse(token, role)
+  9: 200 OK {token, role}
+  10: redirect dashboard
+end note
+
+@enduml

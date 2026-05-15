@@ -1,0 +1,50 @@
+@startuml UC8_AddProduct_Sequence
+skinparam backgroundColor #131313
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 4
+skinparam sequenceParticipantBorderColor #FF6B00
+skinparam sequenceParticipantBackgroundColor #1f1f1f
+skinparam sequenceParticipantFontColor #e2e2e2
+skinparam sequenceParticipantFontStyle Bold
+skinparam sequenceActorBorderColor #FF6B00
+skinparam sequenceActorBackgroundColor #1f1f1f
+skinparam sequenceActorFontColor #e2e2e2
+skinparam sequenceArrowColor #FF6B00
+skinparam sequenceLifeLineBorderColor #5a4136
+skinparam noteBorderColor #FF6B00
+skinparam noteBackgroundColor #2a2a2a
+skinparam noteFontColor #e2bfb0
+skinparam titleFontColor #FF6B00
+skinparam titleFontSize 16
+skinparam titleFontStyle Bold
+
+title UC8 – Add Product (Admin)
+
+actor Admin as admin
+participant "React\nFrontend" as react
+participant "AdminController" as ctrl
+participant "ProductService" as svc
+participant "ProductRepository" as repo
+database "Database" as db
+
+admin -> react : completează formularul de produs
+react -> ctrl : POST /api/admin/products\n{productDTO}\nAuthorization: Bearer {token}
+ctrl -> ctrl : @PreAuthorize("hasRole('ADMIN')")
+ctrl -> svc : addProduct(productDTO)
+svc -> svc : validateProductData(dto)
+
+alt Date invalide
+  svc --> ctrl : throw ValidationException
+  ctrl --> react : 400 Bad Request
+  react --> admin : afișează erori validare
+else Date valide
+  svc -> repo : save(product)
+  repo -> db : INSERT INTO products (...)
+  db --> repo : Product (cu id generat)
+  repo --> svc : Product saved
+  svc --> ctrl : ProductDTO
+  ctrl --> react : 201 Created {product}
+  react --> admin : confirmă — produs adăugat
+end
+
+@enduml

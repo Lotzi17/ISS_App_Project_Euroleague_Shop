@@ -1,0 +1,54 @@
+@startuml UC9_UpdateStock_Communication
+skinparam backgroundColor #131313
+skinparam componentBorderColor #FF6B00
+skinparam componentBackgroundColor #1f1f1f
+skinparam componentFontColor #e2e2e2
+skinparam componentFontStyle Bold
+skinparam actorBorderColor #FF6B00
+skinparam actorBackgroundColor #1f1f1f
+skinparam actorFontColor #e2e2e2
+skinparam arrowColor #FF6B00
+skinparam arrowThickness 2
+skinparam noteBorderColor #FF6B00
+skinparam noteBackgroundColor #2a2a2a
+skinparam noteFontColor #e2bfb0
+skinparam titleFontColor #FF6B00
+skinparam titleFontSize 16
+skinparam titleFontStyle Bold
+skinparam linetype ortho
+
+title UC9 – Update Stock (Admin)
+
+actor "Admin" as admin
+component "React Frontend" as react
+component "AdminController" as ctrl
+component "ProductService" as svc
+component "ProductRepository" as repo
+database "Database" as db
+
+admin -- react
+react -- ctrl
+ctrl -- svc
+svc -- repo
+repo -- db
+svc -- svc
+
+note as N1
+  1: introduce stoc nou
+  2: PUT /api/admin/products/{id}/stock
+  3: updateStock(id, newStock)
+  4: findById(id)
+  5: SELECT WHERE id=?
+  6: Product
+  7: Product
+  8: product.setStock(newStock)
+  9: save(product)
+  10: UPDATE products SET stock=?
+  11: Product updated
+  12: Product
+  13: ProductDTO
+  14: 200 OK {product}
+  15: confirmă stoc actualizat
+end note
+
+@enduml

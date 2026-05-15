@@ -1,0 +1,51 @@
+@startuml UC10_ImportProductsCSV_Communication
+skinparam backgroundColor #131313
+skinparam componentBorderColor #FF6B00
+skinparam componentBackgroundColor #1f1f1f
+skinparam componentFontColor #e2e2e2
+skinparam componentFontStyle Bold
+skinparam actorBorderColor #FF6B00
+skinparam actorBackgroundColor #1f1f1f
+skinparam actorFontColor #e2e2e2
+skinparam arrowColor #FF6B00
+skinparam arrowThickness 2
+skinparam noteBorderColor #FF6B00
+skinparam noteBackgroundColor #2a2a2a
+skinparam noteFontColor #e2bfb0
+skinparam titleFontColor #FF6B00
+skinparam titleFontSize 16
+skinparam titleFontStyle Bold
+skinparam linetype ortho
+
+title UC10 – Import Products from CSV (Admin)
+
+actor "Admin" as admin
+component "React Frontend" as react
+component "AdminController" as ctrl
+component "ImportService" as svc
+component "ProductRepository" as repo
+database "Database" as db
+
+admin -- react
+react -- ctrl
+ctrl -- svc
+svc -- svc
+svc -- repo
+repo -- db
+
+note as N1
+  1: selectează fișier CSV
+  2: POST /api/admin/import
+  3: importProductsFromCsv(file)
+  4: parseCsvFile(file)
+  5: validateRows(rows)
+  6: saveAll(List<Product>)
+  7: INSERT INTO products (batch)
+  8: List<Product> saved
+  9: List<Product>
+  10: ImportResultDTO {count, errors}
+  11: 200 OK {imported: N}
+  12: afișează rezultat
+end note
+
+@enduml

@@ -1,0 +1,48 @@
+@startuml UC4_FilterProducts_Communication
+skinparam backgroundColor #131313
+skinparam componentBorderColor #FF6B00
+skinparam componentBackgroundColor #1f1f1f
+skinparam componentFontColor #e2e2e2
+skinparam componentFontStyle Bold
+skinparam actorBorderColor #FF6B00
+skinparam actorBackgroundColor #1f1f1f
+skinparam actorFontColor #e2e2e2
+skinparam arrowColor #FF6B00
+skinparam arrowThickness 2
+skinparam noteBorderColor #FF6B00
+skinparam noteBackgroundColor #2a2a2a
+skinparam noteFontColor #e2bfb0
+skinparam titleFontColor #FF6B00
+skinparam titleFontSize 16
+skinparam titleFontStyle Bold
+skinparam linetype ortho
+
+title UC4 – Filter Products
+
+actor "User" as user
+component "React Frontend" as react
+component "ProductController" as ctrl
+component "ProductService" as svc
+component "ProductRepository" as repo
+database "Database" as db
+
+user -- react
+react -- ctrl
+ctrl -- svc
+svc -- repo
+repo -- db
+
+note as N1
+  1: selectează filtre
+  2: GET /api/products?category=&team=&maxPrice=
+  3: filterProducts(filterDTO)
+  4: findByFilters(cat, team, price)
+  5: SELECT WHERE filters
+  6: List<Product>
+  7: List<Product>
+  8: List<ProductDTO>
+  9: 200 OK [filtered]
+  10: afișează produse filtrate
+end note
+
+@enduml

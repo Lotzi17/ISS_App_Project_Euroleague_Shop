@@ -1,0 +1,50 @@
+@startuml UC8_AddProduct_Communication
+skinparam backgroundColor #131313
+skinparam componentBorderColor #FF6B00
+skinparam componentBackgroundColor #1f1f1f
+skinparam componentFontColor #e2e2e2
+skinparam componentFontStyle Bold
+skinparam actorBorderColor #FF6B00
+skinparam actorBackgroundColor #1f1f1f
+skinparam actorFontColor #e2e2e2
+skinparam arrowColor #FF6B00
+skinparam arrowThickness 2
+skinparam noteBorderColor #FF6B00
+skinparam noteBackgroundColor #2a2a2a
+skinparam noteFontColor #e2bfb0
+skinparam titleFontColor #FF6B00
+skinparam titleFontSize 16
+skinparam titleFontStyle Bold
+skinparam linetype ortho
+
+title UC8 – Add Product (Admin)
+
+actor "Admin" as admin
+component "React Frontend" as react
+component "AdminController" as ctrl
+component "ProductService" as svc
+component "ProductRepository" as repo
+database "Database" as db
+
+admin -- react
+react -- ctrl
+ctrl -- svc
+svc -- svc
+svc -- repo
+repo -- db
+
+note as N1
+  1: completează form produs
+  2: POST /api/admin/products
+  3: addProduct(productDTO)
+  4: validateProductData()
+  5: save(product)
+  6: INSERT INTO products
+  7: Product (cu id)
+  8: Product saved
+  9: ProductDTO
+  10: 201 Created {product}
+  11: confirmă adăugare
+end note
+
+@enduml

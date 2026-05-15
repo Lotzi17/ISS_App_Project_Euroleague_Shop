@@ -1,0 +1,49 @@
+@startuml UC1_Login_Sequence
+skinparam backgroundColor #131313
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 4
+skinparam sequenceParticipantBorderColor #FF6B00
+skinparam sequenceParticipantBackgroundColor #1f1f1f
+skinparam sequenceParticipantFontColor #e2e2e2
+skinparam sequenceParticipantFontStyle Bold
+skinparam sequenceActorBorderColor #FF6B00
+skinparam sequenceActorBackgroundColor #1f1f1f
+skinparam sequenceActorFontColor #e2e2e2
+skinparam sequenceArrowColor #FF6B00
+skinparam sequenceLifeLineBorderColor #FF6B00
+skinparam sequenceMessageAlignment center
+skinparam noteBorderColor #FF6B00
+skinparam noteBackgroundColor #2a2a2a
+skinparam noteFontColor #e2bfb0
+skinparam titleFontColor #FF6B00
+skinparam titleFontSize 16
+skinparam titleFontStyle Bold
+
+title UC1 – Login
+
+actor User as user
+participant "React\nFrontend" as react
+participant "AuthController" as ctrl
+participant "UserService" as svc
+participant "UserRepository" as repo
+database "Database" as db
+
+user -> react : introduce username + parolă
+react -> ctrl : POST /api/auth/login\n{username, password}
+ctrl -> svc : authenticate(username, password)
+svc -> repo : findByUsername(username)
+repo -> db : SELECT * FROM users\nWHERE username = ?
+db --> repo : User entity
+repo --> svc : Optional<User>
+svc -> svc : validatePassword(rawPass, encodedPass)
+svc --> ctrl : AuthResponse(token, role)
+ctrl --> react : 200 OK {token, role, userId}
+react --> user : redirect la home / admin dashboard
+
+note right of svc
+  Dacă parola e incorectă
+  → aruncă BadCredentialsException
+  → 401 Unauthorized
+end note
+
+@enduml

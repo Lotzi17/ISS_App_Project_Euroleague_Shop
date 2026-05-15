@@ -1,0 +1,54 @@
+@startuml UC7_AddToCart_Communication
+skinparam backgroundColor #131313
+skinparam componentBorderColor #FF6B00
+skinparam componentBackgroundColor #1f1f1f
+skinparam componentFontColor #e2e2e2
+skinparam componentFontStyle Bold
+skinparam actorBorderColor #FF6B00
+skinparam actorBackgroundColor #1f1f1f
+skinparam actorFontColor #e2e2e2
+skinparam arrowColor #FF6B00
+skinparam arrowThickness 2
+skinparam noteBorderColor #FF6B00
+skinparam noteBackgroundColor #2a2a2a
+skinparam noteFontColor #e2bfb0
+skinparam titleFontColor #FF6B00
+skinparam titleFontSize 16
+skinparam titleFontStyle Bold
+skinparam linetype ortho
+
+title UC7 – Add Product to Cart
+
+actor "User" as user
+component "React Frontend" as react
+component "CartController" as ctrl
+component "CartService" as svc
+component "ProductService" as psvc
+component "CartRepository" as repo
+database "Database" as db
+
+user -- react
+react -- ctrl
+ctrl -- svc
+svc -- psvc
+svc -- svc
+svc -- repo
+repo -- db
+
+note as N1
+  1: apasă '+ Coș'
+  2: POST /api/cart/add
+  3: addToCart(userId, productId, qty)
+  4: getProductById(productId)
+  5: Product
+  6: checkStock(product, qty)
+  7: save(cartItem)
+  8: INSERT/UPDATE cart_items
+  9: CartItem saved
+  10: CartItem
+  11: CartItemDTO
+  12: 200 OK {cartItem}
+  13: actualizează coș UI
+end note
+
+@enduml
